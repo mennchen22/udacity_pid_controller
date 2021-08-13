@@ -1,6 +1,8 @@
 #ifndef PID_H
 #define PID_H
 
+#include <vector>
+
 class PID {
  public:
   /**
@@ -38,6 +40,7 @@ class PID {
   double p_error;
   double i_error;
   double d_error;
+  double prev_cte;
 
   /**
    * PID Coefficients
@@ -45,6 +48,8 @@ class PID {
   double Kp;
   double Ki;
   double Kd;
+
+  std::vector<double> int_cte;
 };
 
 #endif  // PID_H
